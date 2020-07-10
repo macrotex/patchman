@@ -30,7 +30,7 @@ except ImportError:
     except ImportError:
         lzma = None
 from colorama import Fore, Style
-from hashlib import sha1, sha256
+from hashlib import sha1, sha256, md5
 from progressbar import Bar, ETA, Percentage, ProgressBar
 
 from patchman.signals import error_message
@@ -202,3 +202,8 @@ def get_sha256(data):
     """ Return the sha256 checksum for data
     """
     return sha256(data).hexdigest()
+
+def get_md5(data):
+    """ Return the md5 checksum for data
+    """
+    return md5(data).hexdigest()
